@@ -111,6 +111,7 @@ if __name__ == '__main__':
         time.sleep(2)
         return a + b
 
+    print(12312312312)
 
     @cache
     def some_next():
