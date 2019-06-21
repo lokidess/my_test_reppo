@@ -77,44 +77,44 @@ import re
 #
 #
 # some_method(0)
-import time
-
-
-def cache(filename=None):
-
-    def wrapped_wrapper(method):
-
-        def wrapper(*args, **kwargs):
-
-            if not filename:
-                file_name = f'{"_".join([str(x) for x in args])}.cache'
-            else:
-                file_name = filename
-
-            if os.path.exists(file_name):
-                with open(file_name, 'rb') as file:
-                    return pickle.load(file)
-            else:
-                with open(file_name, 'wb') as file:
-                    result = method(*args, **kwargs)
-                    pickle.dump(result, file)
-                return result
-
-        return wrapper
-
-    return wrapped_wrapper
-
-
-if __name__ == '__main__':
-    @cache(filename='loki.cache')
-    def some_method(a, b):
-        time.sleep(2)
-        return a + b
-
-
-    @cache
-    def some_next():
-        pass
-
-
-    print(some_method(31, 76))
+# import time
+#
+#
+# def cache(filename=None):
+#
+#     def wrapped_wrapper(method):
+#
+#         def wrapper(*args, **kwargs):
+#
+#             if not filename:
+#                 file_name = f'{"_".join([str(x) for x in args])}.cache'
+#             else:
+#                 file_name = filename
+#
+#             if os.path.exists(file_name):
+#                 with open(file_name, 'rb') as file:
+#                     return pickle.load(file)
+#             else:
+#                 with open(file_name, 'wb') as file:
+#                     result = method(*args, **kwargs)
+#                     pickle.dump(result, file)
+#                 return result
+#
+#         return wrapper
+#
+#     return wrapped_wrapper
+#
+#
+# if __name__ == '__main__':
+#     @cache(filename='loki.cache')
+#     def some_method(a, b):
+#         time.sleep(2)
+#         return a + b
+#
+#
+#     @cache
+#     def some_next():
+#         pass
+#
+#
+#     print(some_method(31, 76))
