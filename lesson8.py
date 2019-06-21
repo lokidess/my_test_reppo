@@ -105,17 +105,17 @@ def cache(filename=None):
     return wrapped_wrapper
 
 
-if __name__ == '__main__':
-    @cache(filename='loki.cache')
-    def some_method(a, b):
-        time.sleep(2)
-        return a + b
-
-    print(12312312312)
-
-    @cache
-    def some_next():
-        pass
-
-
-    print(some_method(31, 76))
+# if __name__ == '__main__':
+#     @cache(filename='loki.cache')
+#     def some_method(a, b):
+#         time.sleep(2)
+#         return a + b
+#
+#     print(12312312312)
+#
+#     @cache
+#     def some_next():
+#         pass
+#
+#
+#     print(some_method(31, 76))
