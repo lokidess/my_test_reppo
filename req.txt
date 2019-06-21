@@ -1,0 +1,4 @@
+Django==1.5
+pytz==2019.1
+sqlparse==0.3.0
+git+https://github.com/django/django.git#egg=django
