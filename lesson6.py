@@ -156,5 +156,3 @@ def some():
 
 
 a = 10
-
-print("Hello! I'm your teemmate!")
